@@ -7,7 +7,14 @@ import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOut
 const Navbar = () => {
   return (
     <div className='nav-container'>
-      
+      <div className='logo-container'>
+        <Avatar />
+        <Typography.Title level={2}  className='logo'/>
+        <Link to='/'>Cryptoverse</Link>
+        {/* <Button className='menu-control-container'>
+
+        </Button> */}
+      </div>
     </div>
   )
 }
