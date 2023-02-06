@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
@@ -10,6 +10,7 @@ const demoImage =
   "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
 const News = ({ simplified }) => {
+  const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory: "Cryptocurrency",
     count: simplified ? 6 : 12,
