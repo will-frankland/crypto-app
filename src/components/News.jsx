@@ -16,6 +16,7 @@ const News = ({ simplified }) => {
   });
 
   console.log("cryptoNews->", cryptoNews);
+  console.log("cryptoNews.articles->", cryptoNews);
   if (!cryptoNews?.value) return "Loading ...";
 
   return (
@@ -26,9 +27,10 @@ const News = ({ simplified }) => {
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
                 <Title className="news-title" level={4}>
-                  {news.name}
+                  {news.title}
                 </Title>
                 <img
+                  style={{ maxWidth: '200px', maxHeight: '100px'}}
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
                   alt="news"
                 />
@@ -53,5 +55,6 @@ const News = ({ simplified }) => {
     </Row>
   );
 };
+
 
 export default News;
