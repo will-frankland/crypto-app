@@ -12,9 +12,10 @@ const demoImage =
 const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data: cryptoNews } = useGetCryptoNewsQuery({
-    newsCategory: "Cryptocurrency",
+    newsCategory,
     count: simplified ? 6 : 12,
   });
+  const { data } = useGetCryptosQuery(count)
 
   console.log("cryptoNews->", cryptoNews);
   console.log("cryptoNews.articles->", cryptoNews);
@@ -31,7 +32,7 @@ const News = ({ simplified }) => {
             optionFilterProp="children"
             onChange={(value) => console.log(value)}
             filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0 }>
-
+              <Option value="cryptocurrency"></Option>
           </Select>
         </Col>
       )}
