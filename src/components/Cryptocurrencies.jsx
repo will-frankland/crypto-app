@@ -11,6 +11,8 @@ const Cryptocurrencies = ({ simplified }) => {
 
   console.log("cryptos->", cryptos);
 
+  if(isFetching) return 'Loading ...';
+
   return (
     <>
       <Row gutter={[32, 32]} className="crypto-card-container">
