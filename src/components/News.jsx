@@ -34,6 +34,7 @@ const News = ({ simplified }) => {
             onChange={(value) => console.log(value)}
             filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0 }>
               <Option value="cryptocurrency"></Option>
+              {data?.data?.coins.map((coin) => <Option value={coin.name}>{coin.name}</Option>)}
           </Select>
         </Col>
       )}
